@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'CaviarDreams';
+	src: local('CaviarDreams'), url("../fonts/CaviarDreams.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Titillium Light';
+	src: local('Titillium Light'), url("../fonts/Titillium-Light.otf") format('opentype');
+}
+
+@font-face {
+	font-family: 'Titillium';
+	src: local('Titillium'), url("../fonts/Titillium-Regular.otf") format('opentype');
+}
+
+/* Main CSS Starts */
+
+body {
+	padding: 0pt;
+	margin: 0pt;
+	background: url('../images/background.jpg');
+	background-attachment: fixed;
+}
+
+#title {
+	position: fixed;
+	bottom: 10pt;
+	right: 10pt;
+	border-radius: 8pt;
+	padding: 10pt;
+	font-family: 'CaviarDreams';
+	font-size: 27pt;
+	color: rgba(88, 88, 88, 0.61);
+	text-shadow: 0px 0px 6px rgb(233, 233, 233);
+}
