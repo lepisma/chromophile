@@ -152,21 +152,22 @@ body {
 .selected {
 	background: rgb(92, 196, 146);
 	color: white;
+	box-shadow: 0px 0px 30px rgb(92, 196, 146);
 }
 
 /*Play CSS*/
 
 #play img{
-	background: rgba(255, 255, 255, 0);
-	border-style: solid;
-	border-radius: 10pt;
-	border-color: gray;
-	box-shadow: 0px 0px 10px;
-}
+	position: relative;
+	background: rgba(255, 255, 255, 0);}
 
 #play {
 	visibility: visible;
 	position: absolute;
 	float: right;
 	margin-left: 259pt;
+	border-style: solid;
+	border-radius: 10pt;
+	border-color: gray;
+	box-shadow: 0px 0px 10px;
 }
