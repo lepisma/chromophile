@@ -87,3 +87,66 @@ body {
 #tutorialButton:hover {
 	background-color: #25b2b9;
 }
+
+/*Level Select CSS*/
+
+#levelSelect {
+	text-align: center;
+	padding-top: 20pt;
+	margin-left: 10pt;
+	position: fixed;
+	width: 200pt;
+	height: 100%;
+	background-color: rgba(99, 99, 99, 0.51);
+	box-shadow: 0px 0px 24px;
+}
+
+#levelTitle {
+	padding-top: 10pt;
+	padding-bottom: 10pt;
+	font-family: 'Titillium';
+	font-size: 30pt;
+	background: rgb(92, 196, 196);
+	box-shadow: 0px 0px 10px black inset;
+	color: rgb(88, 87, 87);
+	text-shadow: 0px 0px 10px;
+}
+
+.level {
+	margin-top: 20pt;
+	padding: 10pt;
+	background: rgb(92, 196, 196);
+	box-shadow: 0px 0px 10px black inset;
+}
+
+.level * {
+	display: inline;
+}
+
+.level img {
+	width: 50pt;
+	position: relative;
+	/* left: 0pt; */
+	/* float: left; */
+	/* margin-left: -139pt; */
+	vertical-align: middle;
+	border-style: solid;
+	border-color: gray;
+	border-width: 2pt;
+	border-radius: 8pt;
+	box-shadow: 0px 0px 10px;
+}
+
+.levelHigh {
+	font-family: 'Titillium';
+	font-size: 17pt;
+	color: rgb(255, 255, 255);
+	text-shadow: 0px 0px 5px;
+	padding-left: 10pt;
+	background: rgb(108, 108, 111);
+	padding-top: 5pt;
+	padding-bottom: 5pt;
+	padding-right: 5pt;
+	border-top-right-radius: 5pt;
+	border-bottom-right-radius: 5pt;
+}
