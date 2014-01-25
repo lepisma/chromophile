@@ -20,6 +20,6 @@ def submit():
 
 @app.get('/level/<id>')
 def send_level(id):
-	return static_file( id + '.png', root = './levels')
+	return static_file( id + '.jpg', root = './levels')
 
 app.run(host = '0.0.0.0', port = 1234)

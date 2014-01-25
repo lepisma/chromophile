@@ -157,17 +157,41 @@ body {
 
 /*Play CSS*/
 
-#play img{
+#playImage img{
+	padding: 0pt;
+	border-top-left-radius: 10pt;
+	border-top-right-radius: 10pt;
+	width: 500pt;
+	height: 300pt;
 	position: relative;
-	background: rgba(255, 255, 255, 0);}
+}
 
 #play {
-	visibility: visible;
+	padding: 0pt;
 	position: absolute;
-	float: right;
-	margin-left: 259pt;
+	top: 50pt;
+	margin-left: 300pt;
 	border-style: solid;
 	border-radius: 10pt;
 	border-color: gray;
 	box-shadow: 0px 0px 10px;
+}
+
+#playInfo {
+	text-align: center;
+	font-family: 'Titillium Light';
+	font-size: 32pt;
+	/* padding: 0pt; */
+	color: rgb(53, 52, 52);
+	padding-top: 5pt;
+	margin-top: -7pt;
+	min-height: 50pt;
+	background-color: rgba(128, 128, 128, 0.36);
+}
+
+#domColorBox {
+	height: 20pt;
+	background-color: rgb(255, 150, 167);
+	border-bottom-left-radius: 10pt;
+	border-bottom-right-radius: 10pt;
 }
