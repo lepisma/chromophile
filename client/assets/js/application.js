@@ -2,6 +2,7 @@ var NUMBER_OF_TRIES = 3;
 var POINTS = [];
 
 $(document).ready(function (){
+	$("#congrats").hide();
 	$("#score").hide();
 	$("#play").hide();
 	// Loads levels data
@@ -155,7 +156,11 @@ function submitPoints(){
 		url: "http://127.0.0.1:1234/submit",
 		data: inputs,
 		success: function(result){
-			$("#show").html("Score : " + result);
+			var x = result.split(" ");
+			$("#show").html("Score : " + x[0]);
+			if(x[1] == '1'){
+				$("#congrats").show();
+			}
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(textStatus);
@@ -164,4 +169,8 @@ function submitPoints(){
 
 
 	$("#score").show();
+}
+
+function okCongrats(){
+	$("#congrats").fadeOut();
 }

@@ -216,3 +216,17 @@ body {
 	box-shadow: 0px 0px 10px;
 	background-color: rgba(255, 255, 255, 0.42);
 }
+
+#congrats {
+	color: rgb(30, 30, 30);
+	text-align: center;
+	font-family: 'Titillium Light';
+	position: fixed;
+	font-size: 50pt;
+	top: 0pt;
+	left: 0pt;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	background-color: rgba(255, 255, 255, 0.8);
+}

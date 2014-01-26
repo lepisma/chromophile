@@ -23,7 +23,10 @@ def submit():
 	G = data['levels']['level'+level]['g']
 	R = data['levels']['level'+level]['r']
 	score = score_calculator.findScore(level, points, (B, G, R))
-	return score
+
+	high = level_int.highScore(level, score)
+
+	return score + " " + str(high)
 
 @app.get('/level/<id>')
 def send_level(id):
