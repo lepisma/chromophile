@@ -29,8 +29,11 @@ function chooseLevel(elem){
 	level_id = elem.attr("id");
 	elem.addClass("selected");
 	elem.siblings().removeClass("selected");
-	var stage = "<img src = 'http://127.0.0.1:1234/level/" + level_id + "'>";
-	$("#playImage").html(stage);
+	var canvas = document.getElementById("playImage");
+	var context = canvas.getContext('2d');
+	var imageObj = new Image();
+	imageObj.src = "http://127.0.0.1:1234/level/" + level_id;
+	context.drawImage(imageObj, 0, 0)
 	// Stage setup ok
 
 	// ct = new ColorThief();
@@ -42,4 +45,12 @@ function chooseLevel(elem){
 	$("#playInfo").html(info);
 	$("#play").show();
 	// Color info set
+}
+
+function getCoord(event){
+	pos_x = event.offsetX?(event.offsetX):event.pageX - $("#playImage").offsetLeft;
+	pos_y = event.offsetY?(event.offsetY):event.pageY - $("#playImage").offsetTop;
+
+	console.log("x : " + pos_x);
+	console.log("y : " + pos_y);
 }
