@@ -12,7 +12,8 @@ $(document).ready(function (){
     	success: function(data) {
     		var output = '';
     		$.each(data.levels, function(index, element){
-    			output += "<div class = 'level' id = '" + element.id + "' onclick = 'chooseLevel(this)' ><img src = 'http://127.0.0.1:1234/level/" + element.id + "'><div class = 'levelHigh'> Score : " + element.score + "</div></div>";
+    			var rgbval = element.r + "," + element.g + "," + element.b;
+    			output += "<div class = 'level' id = '" + element.id + "' onclick = 'chooseLevel(this)' ><img src = 'http://127.0.0.1:1234/level/" + element.id + "'><div class = 'levelHigh' style= 'background-color: rgb(" + rgbval + ")'> Score : " + element.score + "</div></div>";
     		});
       		$('#levels').html(output);
     	},
@@ -95,7 +96,9 @@ function chooseLevel(elem){
 	// var domColor = ct.getColor(playImage);
 	// console.log(domColor);
 	// Generate color in html format
-	var info = "Stick to<div id = 'domColorBox' style = 'background-color: "/* put color here */ + "'></div>";
+	var color = $(".selected .levelHigh").css("background-color");
+	console.log(color);
+	var info = "Stick to<div id = 'domColorBox' style = 'background-color: " + color + "'></div>";
 	// console.log(info);
 	$("#playInfo").html(info);
 	$("#play").show();

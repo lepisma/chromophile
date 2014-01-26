@@ -147,7 +147,6 @@ body {
 	color: rgb(255, 255, 255);
 	text-shadow: 0px 0px 5px;
 	padding-left: 10pt;
-	background: rgb(108, 108, 111);
 	padding-top: 5pt;
 	padding-bottom: 5pt;
 	padding-right: 5pt;
@@ -203,5 +202,5 @@ body {
 }
 
 #score {
-	
+
 }
