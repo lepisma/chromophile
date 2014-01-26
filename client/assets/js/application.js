@@ -34,6 +34,22 @@ function chooseLevel(elem){
 	var imageObj = new Image();
 	imageObj.src = "http://127.0.0.1:1234/level/" + level_id;
 	context.drawImage(imageObj, 0, 0)
+	context.beginPath();
+    context.arc(30, 370, 25, 0, 2 * Math.PI, false);
+    context.fillStyle = 'rgb(92, 196, 196)';
+    context.fill();
+    context.lineWidth = 20;
+    context.strokeStyle = '#000000';
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
+    context.arc(570, 30, 25, 0, 2 * Math.PI, false);
+    context.fillStyle = 'rgb(92, 196, 196)';
+    context.fill();
+    context.lineWidth = 20;
+    context.strokeStyle = '#000000';
+    context.stroke();
 	// Stage setup ok
 
 	// ct = new ColorThief();
