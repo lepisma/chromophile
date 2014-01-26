@@ -60,6 +60,7 @@ function fadeToHome(){
 }
 
 function chooseLevel(elem){
+	$("#score").hide();
 	elem = $(elem);
 	level_id = elem.attr("id");
 	elem.addClass("selected");
@@ -102,7 +103,6 @@ function chooseLevel(elem){
 	// console.log(info);
 	$("#playInfo").html(info);
 	$("#play").show();
-	$("#score").show();
 	NUMBER_OF_TRIES = 3;
 	// Color info set
 }
@@ -161,4 +161,7 @@ function submitPoints(){
 			console.log(textStatus);
 		}
 	});
+
+
+	$("#score").show();
 }

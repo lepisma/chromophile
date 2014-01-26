@@ -1,5 +1,8 @@
 from bottle import Bottle, request, response, run, static_file
 import level_int
+import score_calculator
+
+data = level_int.level_data_json
 
 app = Bottle()
 
@@ -9,14 +12,18 @@ def enable_cors():
 
 @app.get('/get_levels')
 def levels():
-	return level_int.level_data_json
+	return data
 
 @app.post('/submit')
 def submit():
 	level = request.forms.get('level')
 	points = request.forms.get('points')
-	# Do things
-	return "hello "
+	points = points.split(" ")
+	B = data['levels']['level'+level]['b']
+	G = data['levels']['level'+level]['g']
+	R = data['levels']['level'+level]['r']
+	score = score_calculator.findScore(level, points, (B, G, R))
+	return score
 
 @app.get('/level/<id>')
 def send_level(id):
