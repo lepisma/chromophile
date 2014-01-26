@@ -86,11 +86,14 @@ function chooseLevel(elem){
     context.lineWidth = 20;
     context.strokeStyle = '#000000';
     context.stroke();
+    context.closePath();
 	// Stage setup ok
 
+
 	// ct = new ColorThief();
-	// playImage = $("#playImage img");
+	// playImage = $("#playImage");
 	// var domColor = ct.getColor(playImage);
+	// console.log(domColor);
 	// Generate color in html format
 	var info = "Stick to<div id = 'domColorBox' style = 'background-color: "/* put color here */ + "'></div>";
 	// console.log(info);
