@@ -155,7 +155,7 @@ function submitPoints(){
 		url: "http://127.0.0.1:1234/submit",
 		data: inputs,
 		success: function(result){
-			console.log(result);
+			$("#show").html("Score : " + result);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(textStatus);
