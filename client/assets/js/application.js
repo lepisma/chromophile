@@ -2,7 +2,7 @@ var NUMBER_OF_TRIES = 3;
 var POINTS = [];
 
 $(document).ready(function (){
-	$("#socre").hide();
+	$("#score").hide();
 	$("#play").hide();
 	// Loads levels data
 	POINTS[0] = [30, 370];

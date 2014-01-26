@@ -155,9 +155,9 @@ body {
 }
 
 .selected {
-	background: rgb(92, 196, 146);
+	background: rgb(219, 219, 219);
 	color: white;
-	box-shadow: 0px 0px 30px rgb(92, 196, 146);
+	box-shadow: 0px 0px 65px rgb(255, 255, 255);
 }
 
 /*Play CSS*/
@@ -202,5 +202,17 @@ body {
 }
 
 #score {
-
+	position: fixed;
+	margin: 20pt;
+	right: 0pt;
+	font-family: CaviarDreams;
+	/* top: 194px; */
+	font-size: 30pt;
+	color: rgb(71, 71, 71);
+	/* width: 209pt; */
+	height: 30pt;
+	border-radius: 10pt;
+	padding: 20pt;
+	box-shadow: 0px 0px 10px;
+	background-color: rgba(255, 255, 255, 0.42);
 }
