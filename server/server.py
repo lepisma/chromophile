@@ -16,7 +16,7 @@ def submit():
 	level = request.forms.get('level')
 	points = request.forms.get('points')
 	# Do things
-	return
+	return "hello "
 
 @app.get('/level/<id>')
 def send_level(id):
