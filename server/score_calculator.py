@@ -1,3 +1,7 @@
+"""
+Contains code for score calculation and other tasks to be excuted on images
+"""
+
 from cv2 import imread, line, bitwise_and
 import numpy as np
 
