@@ -1,40 +1,56 @@
-import cv2
+from cv2 import imread, line, bitwise_and
 import numpy as np
-from PIL import Image, ImageDraw
-import math
 
-def findMeanColor(img):
-	pixels = img.shape[0] * img.shape[1]
-	meanBlue = int(np.sum(img[:, :, 0]) / pixels)
-	meanGreen = int(np.sum(img[:, :, 1]) / pixels)
-	meanRed = int(np.sum(img[:, :, 2])/ pixels)
-	return (meanBlue, meanGreen, meanRed)
+def find_mean_color(img, on_pixels = -1):
+	"""
+	Returns mean color of an image (in B, G, R).
+	If on_pixels are provided (non negative), then the total color is divided by this value instead of total pixels in image. This is used for calculating color of a path.
+	"""
 
-def makeMask(points):
-	mask = Image.open("mask.jpg")
-	draw = ImageDraw.Draw(mask)
-	draw.line((points[0], points[1], points[2], points[3]), fill = (255, 255, 255), width = 20)
-	draw.line((points[4], points[5], points[6], points[7]), fill = (255, 255, 255), width = 20)
-	draw.line((points[8], points[9], points[10], points[11]), fill = (255, 255, 255), width = 20)
-	draw.line((points[12], points[13], points[14], points[15]), fill = (255, 255, 255), width = 20)
-	im.save("tmp.jpg")
+	if on_pixels == -1:
+		pixels = img.shape[0] * img.shape[1]
+	else:
+		pixels = on_pixels
+	mean_blue = int(np.sum(img[:, :, 0]) / pixels)
+	mean_green = int(np.sum(img[:, :, 1]) / pixels)
+	mean_red = int(np.sum(img[:, :, 2])/ pixels)
+	return (mean_blue, mean_green, mean_red)
 
-def findScore(level_id, points, dominant_color):
-	fileref = "./levels/" + str(level_id) + ".jpg"
+def make_mask(points_array, shape = (400, 600, 3)):
+	"""
+	Returns the mask made by using the points provided from the player.
+	The mask consists of lines drawn by the player and is used for calculating the score.
+	Also returns the number of "on" pixels (pixels with white color)
+	"""
 	
-	makeMask(points)
+	number_of_points = len(points_array)
+	mask = np.zeros(shape)
+	
+	for i in range(number_of_points - 1):
+		cv2.line(mask, points_array[i], points_array[i+1], (255, 255, 255), 20)
 
-	img = cv2.imread(fileref)
-	mask = cv2.imread("tmp.jpg")
-	result = cv2.bitwise_and(img, img, mask = mask)
+	total_white_color = np.sum(mask[:, :, 0])
+	total_on_pixels = int(total_white_color / 255.0)
 
-	levelMean = findMeanColor(img)
-	solutionMean = findMeanColor(result)
-	scoreInv = 0
+	return mask, total_on_pixels
+
+def find_score(level_id, points):
+	"""
+	Calculates the score by taking the level_id and points.
+	"""
+
+	fileref = "./levels/" + str(level_id) + ".jpg"
+	level_img = cv2.imread(fileref)
+	mask, on_pixels = make_mask(points, shape = level_img.shape)
+
+	result = cv2.bitwise_and(level_img, mask)
+
+	level_mean = find_mean_color(level_img)
+	solution_mean = find_mean_color(result, on_pixels = on_pixels)
+	score = 0.0
 	for x in range(3):
-		scoreInv += (levelMean[x] - solutionMean[x])**2
+		score += (level_mean[x] - solution_mean[x]) ** 2
 
-	scoreInv = math.sqrt(scoreInv)
-	score = 500.0 - scoreInv
+	score = np.sqrt(score)
 
 	return score

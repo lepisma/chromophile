@@ -6,29 +6,34 @@ data = level_int.level_data_json
 
 app = Bottle()
 
-@app.hook('after_request')
-def enable_cors():
-	response.headers['Access-Control-Allow-Origin'] = '*'
+def enable_cors(fn):
+	def _enable_cors(*args, **kwargs):
+		response.headers['Access-Control-Allow-Origin'] = '*'
+		response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, OPTIONS'
+		response.headers['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested_With, X-CSRF-Token'
+		if request.method != 'OPTIONS':
+			return fn(*args, **kwargs)
+	return _enable_cors
 
 @app.get('/get_levels')
+@enable_cors
 def levels():
 	return data
 
 @app.post('/submit')
+@enable_cors
 def submit():
 	level = request.forms.get('level')
 	points = request.forms.get('points')
 	points = points.split(" ")
-	B = data['levels']['level'+level]['b']
-	G = data['levels']['level'+level]['g']
-	R = data['levels']['level'+level]['r']
-	score = score_calculator.findScore(level, points, (B, G, R))
+	score = score_calculator.findScore(level, points)
 
 	high = level_int.highScore(level, score)
 
 	return score + " " + str(high)
 
 @app.get('/level/<id>')
+@enable_cors
 def send_level(id):
 	return static_file( id + '.jpg', root = './levels')
 
