@@ -4,15 +4,14 @@
 	<title>
 		Chromophile
 	</title>
-	<link rel = "shortcut icon" href = "./assets/images/color-wheel.png">
-	<link rel = "stylesheet" href = "./assets/css/application.css">
-	<script src = "./assets/js/jquery-2.1.0.min.js"></script>
-	<script src = "./assets/js/color-thief.js"></script>
-	<script src = "./assets/js/application.js"></script>
+	<link rel = "shortcut icon" href = "images/color-wheel.png">
+	<link rel = "stylesheet" href = "css/application.css">
+	<script src = "js/jquery-2.1.0.min.js"></script>
+	<script src = "js/application.js"></script>
 </head>
 <body>
 <div id = "content">
-	<div id = "title" onclick = "showLevels">
+	<div id = "title" onclick = "show_levels">
 		Chromophile
 	</div>
 	<div id = "levelSelect">
@@ -30,26 +29,25 @@
 		</div>
 	</div>
 	<div id = "score">
-	Score = 0
+	Score : -1
 	</div>
 </div>
 <div id = "tutorial">
 	<span id = "tutorialTitle">How to Play</span><br>
-	<img src = "./assets/images/sample.jpg">
+	<img src = "images/sample.jpg">
 	<div id = "tutorialGuide">
 		Mark three points in the image so as the line joining the two diagonally opposite points, passing through the three points, suffer minimum deviation from the dominant color.
-		<div id = "tutorialButton" onclick = "fadeToHome()">
+		<div id = "tutorialButton" onclick = "fade_to_home()">
 		Got it ! Start !
 		</div>
 	</div>
 </div>
-<div id = "congrats" onclick = "okCongrats()">
-	<img src = "./assets/images/star.png">
-	<img src = "./assets/images/star.png">
-	<img src = "./assets/images/star.png">
-	<hr>
+<div id = "congrats" onclick = "ok_congrats()">
+	<img src = "images/star.png">
+	<img src = "images/star.png">
+	<img src = "images/star.png">
 	<p>
-		Congrats !! You just made a high score !
+		Congrats !! You just reached closest distance !
 	</p>
 </div>
 </body>

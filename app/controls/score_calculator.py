@@ -29,9 +29,8 @@ def make_mask(points_array, shape = (400, 600, 3)):
 	
 	number_of_points = len(points_array)
 	mask = np.zeros(shape)
-	
 	for i in range(number_of_points - 1):
-		cv2.line(mask, points_array[i], points_array[i+1], (255, 255, 255), 20)
+		line(mask, points_array[i], points_array[i+1], (255, 255, 255), 20)
 
 	total_white_color = np.sum(mask[:, :, 0])
 	total_on_pixels = int(total_white_color / 255.0)
@@ -43,11 +42,12 @@ def find_score(level_id, points):
 	Calculates the score by taking the level_id and points.
 	"""
 
-	fileref = "./levels/" + str(level_id) + ".jpg"
-	level_img = cv2.imread(fileref)
+	fileref = "app/controls/levels/" + str(level_id) + ".jpg"
+	level_img = imread(fileref)
 	mask, on_pixels = make_mask(points, shape = level_img.shape)
-
-	result = cv2.bitwise_and(level_img, mask)
+	
+	mask = np.array(mask, dtype = np.uint8)
+	result = bitwise_and(level_img, mask)
 
 	level_mean = find_mean_color(level_img)
 	solution_mean = find_mean_color(result, on_pixels = on_pixels)
@@ -56,5 +56,6 @@ def find_score(level_id, points):
 		score += (level_mean[x] - solution_mean[x]) ** 2
 
 	score = int(np.sqrt(score))
+	print "score is : " + str(score)
 
 	return score
