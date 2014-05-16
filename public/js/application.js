@@ -77,7 +77,7 @@ function choose_level(elem){
 
 	var color = $(".selected .levelHigh").css("background-color");
 	
-	var info = "Stick to<div id = 'domColorBox' style = 'background-color: " + color + "'></div>";
+	var info = "Stick to <div id = 'domColorBox' style = 'background-color: " + color + "; color: " + color + "'>...</div>";
 	
 	$("#playInfo").html(info);
 	$("#play").show();

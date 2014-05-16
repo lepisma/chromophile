@@ -16,20 +16,20 @@
 /* Main CSS Starts */
 
 body {
-	padding: 0pt;
-	margin: 0pt;
+	padding: 0px;
+	margin: 0px;
 	background: url('../images/background.jpg');
 	background-attachment: fixed;
 }
 
 #title {
 	position: fixed;
-	bottom: 10pt;
-	right: 10pt;
-	border-radius: 8pt;
-	padding: 10pt;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 8px;
+	padding: 10px;
 	font-family: 'CaviarDreams';
-	font-size: 27pt;
+	font-size: 27px;
 	color: rgba(88, 88, 88, 0.61);
 	text-shadow: 0px 0px 6px rgb(233, 233, 233);
 }
@@ -41,45 +41,51 @@ body {
 	text-align: center;
 	font-family: 'Titillium Light';
 	position: fixed;
-	top: 0pt;
-	left: 0pt;
+	top: 0px;
+	left: 0px;
 	width: 100%;
 	height: 100%;
 	z-index: 3;
 	background-color: rgba(255, 255, 255, 0.62);
 }
 
+#tutorialWrapper {
+	margin-top: 80px;
+}
+
 #tutorialTitle {
 	position: relative;
-	top: 20pt;
+	top: 20px;
 	font-family: 'Titillium';
-	font-size: 50pt;
+	font-size: 50px;
 }
 
 #tutorialGuide {
 	width: 50%;
-	position: relative;
-	top: 50pt;
-	right: 30pt;
+	font-size: 27px;
 	float: right;
-	font-size: 30pt;
+	margin-right: 50px;
+}
+
+#tutorialImage {
+	width: 50%;
 }
 
 #tutorial img {
-	position: relative;
-	top: 50pt;
-	width: 400pt;
-	border-radius: 10pt;
+	width: 60%;
+	border-radius: 10px;
 	border-style: solid;
-	border-width: 4pt;
+	border-width: 4px;
+	float: left;
+	margin-left: 50px;
 }
 
 #tutorialButton {
-	margin-top: 20pt;
-	cursor: crosshair;
-	font-size: 40pt;
-	padding: 8pt;
-	border-radius: 6pt;
+	margin-top: 20px;
+	cursor: pointer;
+	font-size: 40px;
+	padding: 8px;
+	border-radius: 6px;
 	border-style: solid;
 	width: auto;
 }
@@ -93,13 +99,14 @@ body {
 #levelSelect {
 	overflow: scroll;
 	text-align: center;
-	padding-top: 20pt;
-	margin-left: 10pt;
+	padding-top: 20px;
+	margin-left: 10px;
 	position: fixed;
-	width: 200pt;
+	width: 200px;
 	height: 100%;
 	background-color: rgba(99, 99, 99, 0.51);
 	box-shadow: 0px 0px 24px;
+	z-index: 2;
 }
 
 ::-webkit-scrollbar{
@@ -108,10 +115,10 @@ body {
 }
 
 #levelTitle {
-	padding-top: 10pt;
-	padding-bottom: 10pt;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	font-family: 'Titillium';
-	font-size: 30pt;
+	font-size: 30px;
 	background: rgb(92, 196, 196);
 	box-shadow: 0px 0px 10px black inset;
 	color: rgb(88, 87, 87);
@@ -119,10 +126,12 @@ body {
 }
 
 .level {
-	margin-top: 20pt;
-	padding: 10pt;
+	margin-top: 20px;
+	padding: 10px;
 	background: rgb(92, 196, 196);
 	box-shadow: 0px 0px 10px black inset;
+	cursor: pointer;
+	cursor: pointer;
 }
 
 .level * {
@@ -130,28 +139,28 @@ body {
 }
 
 .level img {
-	width: 50pt;
-	height: 50pt;
+	width: 50px;
+	height: 50px;
 	position: relative;
 	vertical-align: middle;
 	border-style: solid;
 	border-color: gray;
-	border-width: 2pt;
-	border-radius: 8pt;
+	border-width: 2px;
+	border-radius: 8px;
 	box-shadow: 0px 0px 10px;
 }
 
 .levelHigh {
 	font-family: 'Titillium';
-	font-size: 17pt;
+	font-size: 17px;
 	color: rgb(255, 255, 255);
 	text-shadow: 0px 0px 5px;
-	padding-left: 10pt;
-	padding-top: 5pt;
-	padding-bottom: 5pt;
-	padding-right: 5pt;
-	border-top-right-radius: 5pt;
-	border-bottom-right-radius: 5pt;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .selected {
@@ -163,56 +172,64 @@ body {
 /*Play CSS*/
 
 #playImage img{
-	padding: 0pt;
-	border-top-left-radius: 10pt;
-	border-top-right-radius: 10pt;
+	padding: 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	width: 600px;
 	height: 400px;
 	position: relative;
 }
 
 #play {
-	padding: 0pt;
-	position: absolute;
-	top: 50pt;
-	margin-left: 300pt;
-	border-style: solid;
-	border-radius: 10pt;
-	border-color: gray;
-	box-shadow: 0px 0px 10px;
+	position: relative;
+	top: 80px;
+	text-align: center;
+	/* align-self: center; */
+}
+
+#playCanvas {
+	position: relative;
 }
 
 #playInfo {
-	text-align: center;
 	font-family: 'Titillium Light';
-	font-size: 32pt;
-	/* padding: 0pt; */
+	/* position: relative; */
+	font-size: 30px;
 	color: rgb(53, 52, 52);
-	padding-top: 5pt;
-	margin-top: -7pt;
-	min-height: 50pt;
-	background-color: rgba(128, 128, 128, 0.36);
+	padding-top: 11px;
+	/* margin-top: -7px; */
+	/* display: inline; */
+	/* width: 600px; */
+	/* text-align: center; */
+	/* align-self: auto; */
+	/* border-bottom-left-radius: 5px; */
+	/* border-bottom-right-radius: 5px; */
+	/* background-color: rgba(128, 128, 128, 0.36); */
 }
 
 #domColorBox {
-	height: 20pt;
+	/* height: 25px; */
 	background-color: rgb(255, 150, 167);
-	border-bottom-left-radius: 10pt;
-	border-bottom-right-radius: 10pt;
+	border-radius: 5px;
+	/* border-bottom-right-radius: 5px; */
+	/* width: 50px; */
+	padding-left: 22px;
+	padding-right: 22px;
+	border-style: solid;
+	display: inline;
 }
 
 #score {
 	position: fixed;
-	margin: 20pt;
-	right: 0pt;
+	margin: 20px;
+	right: 0px;
+	top: 0px;
 	font-family: CaviarDreams;
-	/* top: 194px; */
-	font-size: 30pt;
+	font-size: 30px;
 	color: rgb(71, 71, 71);
-	/* width: 209pt; */
-	height: 30pt;
-	border-radius: 10pt;
-	padding: 20pt;
+	height: 30px;
+	border-radius: 10px;
+	padding: 20px;
 	box-shadow: 0px 0px 10px;
 	background-color: rgba(255, 255, 255, 0.42);
 }
@@ -222,11 +239,13 @@ body {
 	text-align: center;
 	font-family: 'Titillium Light';
 	position: fixed;
-	font-size: 50pt;
-	top: 0pt;
-	left: 0pt;
+	font-size: 50px;
+	top: 0px;
+	left: 0px;
 	width: 100%;
 	height: 100%;
 	z-index: 4;
+	/* cursor: pointer; */
+	cursor: pointer;
 	background-color: rgba(255, 255, 255, 0.8);
 }

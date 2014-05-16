@@ -21,9 +21,11 @@
 		</div>
 	</div>
 	<div id = "play">
-		<canvas width = "600" height = "400" id = "playImage">
-			
-		</canvas>
+		<div id = "playCanvas">
+			<canvas width = "600" height = "400" id = "playImage">
+				
+			</canvas>
+		</div>
 		<div id = "playInfo">
 			
 		</div>
@@ -34,12 +36,16 @@
 </div>
 <div id = "tutorial">
 	<span id = "tutorialTitle">How to Play</span><br>
-	<img src = "images/sample.jpg">
-	<div id = "tutorialGuide">
-		Mark three points in the image so as the line joining the two diagonally opposite points, passing through the three points, suffer minimum deviation from the dominant color.
-		Minimize the distance !
-		<div id = "tutorialButton" onclick = "fade_to_home()">
-		Got it ! Start !
+	<div id = "tutorialWrapper">
+		<div id = "tutorialImage">
+			<img src = "images/sample.jpg">
+		</div>
+		<div id = "tutorialGuide">
+			Mark three points in the image so as the line joining the two diagonally opposite points, passing through the three points, suffer minimum deviation from the dominant color.
+			Minimize the distance !
+			<div id = "tutorialButton" onclick = "fade_to_home()">
+				Got it ! Start !
+			</div>
 		</div>
 	</div>
 </div>
