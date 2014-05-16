@@ -176,7 +176,8 @@ function submit_points(){
 			}
 		},
 		error: function(jqXHR, textStatus, errorThrown){
-			console.log(textStatus);
+			alert("An error occured. Please refresh your page.\nMaybe the server is down.")
+    	console.log(errorThrown);
 		}
 	});
 }
