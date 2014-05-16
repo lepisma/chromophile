@@ -55,6 +55,6 @@ def find_score(level_id, points):
 	for x in range(3):
 		score += (level_mean[x] - solution_mean[x]) ** 2
 
-	score = np.sqrt(score)
+	score = int(np.sqrt(score))
 
 	return score
